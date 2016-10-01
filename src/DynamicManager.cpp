@@ -63,7 +63,7 @@ int DynamicManager::createParticles(int amount, const Emitter& emitter, PhysicsC
 void DynamicManager::processParticles(float secs, PhysicsCalculator& physics, BodyCalculator& body)
 {
 	//Processa as partículas e remove as mortas
-	vector<Particle*> newLive;	
+	vector<Particle*> newLive;		
 	for (unsigned i = 0; i < live.size(); i++) 
 	{
 		processParticle(secs, live[i], physics, body);

@@ -23,7 +23,7 @@
 #include "RingShape.h"
 #include "DynamicManager.h"
 #include "NewtonPhysics.h"
-#include "SimpleColoredBody.h"
+#include "ColoredBody.h"
 #include "OFRenderer.h"
 
 using namespace math;
@@ -33,7 +33,7 @@ using namespace particle::body;
 using namespace particle::manager;
 using namespace particle::shape;
 
-Flame::Flame(void) { }
+Flame::Flame(void) : orange(true) { }
 
 void Flame::setup()
 {
@@ -46,9 +46,9 @@ void Flame::setup()
 		Range<float>(0),
 		Range<float>(0)); 
 
-	SimpleColoredBody* body = new SimpleColoredBody(
-		255, 30, 0, //Color
-		Range<int>(50,0)); //Alpha variation
+		body = new ColoredBody(
+			255, 30, 0, //Color
+			Range<int>(50,0)); //Alpha variation
 
 	ParticleRenderer* renderer = new OFRenderer("img/smoke.png", 1, true);
 
@@ -74,8 +74,15 @@ void Flame::update(float time, const MouseInfo& mouse)
 		x = (x < 0 ? -400 : 400) - x;		
 		ofVec2f accel(-x,0);
 		newton->setForces(accel);
-	}
+		orange = !orange;
 
+		if (orange)
+			body->setColor(255, 30, 0, 3.0f);
+		else
+			body->setColor(0, 100, 255, 3.0f);
+
+	}
+	
 	emitter->process(time);
 }
 

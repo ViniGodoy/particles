@@ -22,7 +22,7 @@
 #include "RingOfFire.h"
 #include "DynamicManager.h"
 #include "NewtonPhysics.h"
-#include "SimpleColoredBody.h"
+#include "ColoredBody.h"
 #include "OFRenderer.h"
 
 using namespace math;
@@ -47,7 +47,7 @@ void RingOfFire::setup()
 		Range<float>(0), //Angle
 		Range<float>(0)); //Angular Speed
 
-	SimpleColoredBody* body1 = new SimpleColoredBody(
+	ColoredBody* body1 = new ColoredBody(
 		200, 0, 0, //Color 
 		Range<int>(50,0)); //Alpha variation
 	
@@ -69,7 +69,7 @@ void RingOfFire::setup()
 		Range<float>(0), //Initial angle
 		Range<float>(0, 6)); //Angular speed
 
-	SimpleColoredBody* body2 = new SimpleColoredBody(
+	ColoredBody* body2 = new ColoredBody(
 		255, 170, 0, //Color 
 		Range<int>(50,0)); //Alpha variation
 

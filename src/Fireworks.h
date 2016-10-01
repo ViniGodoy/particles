@@ -25,7 +25,7 @@
 #include "Emitter.h"
 
 #include "ParticleObserver.h"
-#include "SimpleColoredBody.h"
+#include "ColoredBody.h"
 #include "Range.h"
 
 class Fireworks : public GameSteps, particle::manager::ParticleObserver
@@ -33,7 +33,7 @@ class Fireworks : public GameSteps, particle::manager::ParticleObserver
     private:
 		particle::Emitter* emitter1;
 		particle::Emitter* emitter2;
-		particle::body::SimpleColoredBody* explosionBody;
+		particle::body::ColoredBody* explosionBody;
 		math::Range<int> count;
 
 	public:

@@ -24,13 +24,16 @@
 #include "GameSteps.h"
 #include "Emitter.h"
 #include "NewtonPhysics.h"
+#include "ColoredBody.h"
 
 class Flame : public GameSteps
 {
 	private:
 		particle::Emitter* emitter;
 		particle::physics::NewtonPhysics *newton;
-		
+		particle::body::ColoredBody *body;
+
+		bool orange;
 		
 	public:
 		Flame();

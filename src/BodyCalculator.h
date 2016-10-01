@@ -28,6 +28,7 @@ namespace particle
 	{
 		class BodyCalculator
 		{
+
 			public:
 				virtual void init(ParticleBody& body) = 0;
 				virtual void calculate(float time, const ParticleLife& life, ParticleBody& body) = 0;

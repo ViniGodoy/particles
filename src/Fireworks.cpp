@@ -23,7 +23,7 @@
 #include "RingShape.h"
 #include "DynamicManager.h"
 #include "NewtonPhysics.h"
-#include "SimpleColoredBody.h"
+#include "ColoredBody.h"
 #include "OFRenderer.h"
 
 #include <iostream>
@@ -50,7 +50,7 @@ void Fireworks::setup()
 			Range<float>(ofDegToRad(-720), ofDegToRad(720))); //Angular speed
 		newton1->setGravity(ofVec2f(0,100));
 
-		SimpleColoredBody* body1 = new SimpleColoredBody(			
+		ColoredBody* body1 = new ColoredBody(			
 			255, 210, 200, //Color 
 			Range<int>(255)); //Alpha variation
 
@@ -71,7 +71,7 @@ void Fireworks::setup()
 			Range<float>(ofDegToRad(0), ofDegToRad(180)), //Angle
 			Range<float>(ofDegToRad(-60), ofDegToRad(60))); //Angular speed
 
-		explosionBody = new SimpleColoredBody(
+		explosionBody = new ColoredBody(
 			0, 255, 0, //Color 
 			Range<int>(255,0)); //Alpha variation
 

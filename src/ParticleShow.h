@@ -25,7 +25,7 @@
 #include "Emitter.h"
 
 #include "ParticleObserver.h"
-#include "SimpleColoredBody.h"
+#include "ColoredBody.h"
 #include <vector>
 
 class ParticleShow : public GameSteps
